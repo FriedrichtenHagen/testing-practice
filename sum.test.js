@@ -21,12 +21,12 @@ test("test the addition", ()=> {
 test("test the subtraction", ()=> {
     expect(calculator.subtract(1,4)).toBe(-3)
 })
-test("test the caesar cypher", ()=> {
+test("shift 1", ()=> {
     expect(calculator.caesarCipher("Friedrich", 1)).toBe("Gsjfesjdi")
 })
-test("test the caesar cypher", ()=> {
+test("shift 4", ()=> {
     expect(calculator.caesarCipher("Friedrich", 4)).toBe("Jvmihvmgl")
 })
-test("test the caesar cypher", ()=> {
-    expect(calculator.caesarCipher("Friedrich", 26)).toBe("Eqhdcqhbg")
+test("shift tilde", ()=> {
+    expect(calculator.caesarCipher("~", 1)).toBe("!")
 })

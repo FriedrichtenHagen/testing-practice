@@ -22,15 +22,19 @@ const calculator = {
     caesarCipher: (string, shiftFactor)=>{
         let shiftedString = [];
         for(let i=0; i<string.length; i++){
-            shiftedString.push(string.charCodeAt(i)+shiftFactor)
+            let codePoint = string.codePointAt(i)+shiftFactor
+            if(codePoint>126){
+                codePoint -= 94
+            }
+            shiftedString.push(codePoint)
         }
-        let test = shiftedString.map(item => String.fromCharCode(item))
+        let test = shiftedString.map(item => String.fromCodePoint(item))
         let result = test.join("")
         return result
     }
 }
 
 
-
+// UTF8 code points: 33-126
 
 module.exports ={sum, capitalize, reverseString, calculator}
