@@ -1,6 +1,5 @@
 
-
-({sum, capitalize, reverseString, calculator} = require("./index"))
+({sum, capitalize, reverseString, calculator, analyzeArray} = require("./index"))
 
 
 test("adds 1+2 to equal 3", ()=> {
@@ -29,4 +28,16 @@ test("shift 4", ()=> {
 })
 test("shift tilde", ()=> {
     expect(calculator.caesarCipher("~", 1)).toBe("!")
+})
+test("test average", ()=> {
+    expect(analyzeArray([2,4,3,9]).average).toBe(4.5)
+})
+test("test min", ()=> {
+    expect(analyzeArray([2,4,3,9]).min).toBe(2)
+})
+test("test max", ()=> {
+    expect(analyzeArray([2,4,3,9]).max).toBe(9)
+})
+test("test length", ()=> {
+    expect(analyzeArray([2,4,3,9]).length).toBe(4)
 })

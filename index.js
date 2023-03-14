@@ -31,10 +31,36 @@ const calculator = {
         let test = shiftedString.map(item => String.fromCodePoint(item))
         let result = test.join("")
         return result
-    }
-}
+    },
 
+}
+function analyzeArray(array){
+    let average = 0
+    let min = Infinity;
+    let max = -Infinity;
+
+    for(let i=0; i<array.length; i++){
+        average += array[i]
+        if(array[i]<min){
+            min = array[i]
+        }
+        if(array[i]>max){
+            max = array[i]
+        }
+    }
+    average = average/array.length
+
+
+
+    let info = {
+        average: average,
+        min: min,
+        max: max,
+        length: array.length,
+    }
+    return info
+}
 
 // UTF8 code points: 33-126
 
-module.exports ={sum, capitalize, reverseString, calculator}
+module.exports ={sum, capitalize, reverseString, calculator, analyzeArray}
